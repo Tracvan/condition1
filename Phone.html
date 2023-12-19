@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PHONE FEES</title>
+</head>
+<body>
+<!--Tính phí cước gọi điện thoại
+với giá cước là 1000vnđ/ phút.
+người dùng nhập số phút đã gọi-->
+<table>
+    <tr>
+        <th>số phút đã gọi</th>
+        <th>Đơn giá mỗi phút</th>
+        <th>Thành tiền</th>
+    </tr>
+    <tr>
+    <td> <input id="min" type="text"> </td>
+    <td>1000vnđ</td>
+    <td id="price"> </td>
+    <td> <button onclick="calculate()"  type="button" id="count">Tính</button> </td>
+    </tr>
+</table>
+</body>
+</html>
+<script>
+    function calculate(){
+        let a = parseFloat(document.getElementById("min").value)
+        let b = a * 1000
+        document.getElementById("price").innerHTML= b;
+    }
+</script>
