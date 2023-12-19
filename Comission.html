@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comission</title>
+</head>
+<body>
+<span>Input your Sales amount :</span><input type="text" id="sales"> <button type="button" onclick="myFunction()">Click</button>
+<br>
+<span>Comission percent</span> <p id="percent"></p>
+<span>Comission amount</span>  <p id="amount"></p>
+<!--//Sales < $50.000; percent = 0%-->
+<!--// Sales > $50.000 ;percent = 1%-->
+<!--//Sales > $100.000; percent = 1.5%-->
+<!--//Sales > $200.000; percent = 2%-->
+<script>
+function myFunction(){
+    let s = parseFloat(document.getElementById("sales").value);
+    let p=0
+    let a = 0
+    function count(p){
+        a=p*s
+    }
+        if(s < 50000){
+            p = 0
+            count(p)
+            document.getElementById("amount").innerHTML=a
+            document.getElementById("percent").innerHTML=p
+        }
+        if (s >= 50000) {
+            p = 1 / 100
+            count(p)
+            document.getElementById("amount").innerHTML= a
+            document.getElementById("percent").innerHTML= p
+        } else if (s > 100000) {
+            p = 1.5 / 100
+            count(p)
+            document.getElementById("amount").innerHTML= a
+            document.getElementById("percent").innerHTML= p
+        } else {
+            p = 2 / 100
+            count(p)
+            document.getElementById("amount").innerHTML= a
+            document.getElementById("percent").innerHTML= p
+        }
+    }
+</script>
+</body>
+
+</html>
